@@ -11,13 +11,12 @@
 		android:layout_height="wrap_content"
 		tools:ignore="MissingConstraints">
 		<ImageView
-			android:id="@+id/IV_kino1"
+			android:id="@+id/iv_block_one"
 			android:layout_width="200dp"
 			android:layout_height="500px"
-			
 			/>
 		<ImageView
-			android:id="@+id/IV_kino2"
+			android:id="@+id/iv_block_two"
 			android:layout_width="wrap_content"
 			android:layout_height="500px"
 			
@@ -34,19 +33,19 @@
 			android:orientation="vertical"
 			>
 			<TextView
-				android:id="@+id/title_kino1"
+				android:id="@+id/tv_title_video_one"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Длиные названия кино"
 				/>
 			<TextView
-				android:id="@+id/data_kino1"
+				android:id="@+id/tv_data_video_one"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Длиные названия кино"
 				/>
 			<TextView
-				android:id="@+id/coment_kino1"
+				android:id="@+id/coment_video_one"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Длиные названия кино"
@@ -62,28 +61,24 @@
 			>
 			
 			<TextView
-				android:id="@+id/title_kino2"
+				android:id="@+id/tv_title_video_two"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Длиные названия кино"
 				/>
 			
 			<TextView
-				android:id="@+id/data_kino2"
+				android:id="@+id/tv_data_video_two"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Длиные названия кино" />
 			
 			<TextView
-				android:id="@+id/coment_kino2"
+				android:id="@+id/coment_video_two"
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Длиные названия кино" />
 		
 		</LinearLayout>
 	</LinearLayout>
-	
-	
-	
-
 </androidx.constraintlayout.widget.ConstraintLayout>

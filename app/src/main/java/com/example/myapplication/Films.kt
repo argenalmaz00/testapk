@@ -1,6 +1,8 @@
 package com.example.myapplication
 
+
+
 sealed class Films{
-    class kino1 (var kinoId:Int,var title:String,var Datacrete:Int,var genre:String):Films()
-    class kino2 (var kinoId:Int,var title:String,var Datacrete:Int,var genre:String):Films()
+    class BLOCK_ONE (var imagedrawable:Int, var title:String, var datacrete:Int, val genre:String):Films()
+    class BLOCK_TWO (val imagedrawable:Int, val title:String, val datacrete:Int, val genre:String):Films()
 }
