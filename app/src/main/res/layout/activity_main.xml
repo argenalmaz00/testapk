@@ -8,28 +8,6 @@
 	android:gravity="center"
 	tools:context=".MainActivity">
 	
-	<Button
-		android:id="@+id/button_whatsapp"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:drawableLeft="@drawable/whatsapp"
-		android:text="WhatsApp"
-		/>
-	
-	<Button
-		android:id="@+id/button_google"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Google search"
-		android:drawableLeft="@drawable/google"
-		/>
-	<Button
-		android:id="@+id/button_youtube"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="Youtube search"
-		android:drawableLeft="@drawable/youtube"
-		/>
 	<EditText
 		android:id="@+id/edit_text"
 		android:layout_width="300dp"

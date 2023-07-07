@@ -15,18 +15,17 @@ class MyTowActivity : AppCompatActivity() {
         setContentView(R.layout.mytowactivity)
         text_view = findViewById(R.id.text_two)
         icon = findViewById(R.id.img_icon)
-        whatsapp()
-        google()
+
+        get_text()
         get_img()
 
     }
 
     private fun get_img() {
-        icon.setImageResource(R.drawable.ic_launcher_background)
         icon.setOnClickListener {
             val inted = Intent(Intent.ACTION_GET_CONTENT)
             inted.type = "image/*"
-            startActivityForResult(Intent.createChooser(inted,"get Image"),200)
+            startActivityForResult(Intent.createChooser(inted,"get image"),200)
         }
     }
 
@@ -36,29 +35,10 @@ class MyTowActivity : AppCompatActivity() {
             data?.data?.let {
                 icon.setImageURI(it)
             }
-
         }
     }
 
-    private fun google() {
-        intent.extras?.getString("text").apply {
-            text_view.text = this.toString()
-        }
-        intent.extras?.getInt("icon").also {
-            if (it != null) {
-                icon.setImageResource(it)
-            }
-        }
-    }
-
-    private fun whatsapp() {
-        intent.extras?.getString("text").apply {
-            text_view.text = this.toString()
-        }
-        intent.extras?.getInt("icon").also {
-            if (it != null) {
-                icon.setImageResource(it)
-            }
-        }
+    private fun get_text() {
+        text_view.text = intent.extras?.getString("text")
     }
 }
