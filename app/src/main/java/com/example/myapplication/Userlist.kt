@@ -16,6 +16,7 @@ class Userlist: RecyclerView.Adapter<Userlist.UserView>(){
     }
     inner  class  UserView(private val binding:ItemsUserBinding): RecyclerView.ViewHolder(binding.root) {
         fun onBind(user :Users)  = with(binding){
+            imagesUser.setImageResource(user.id)
             tvName.text = user.name
             tvFamile.text = user.Famile
             tvAge.text = user.age.toString()
