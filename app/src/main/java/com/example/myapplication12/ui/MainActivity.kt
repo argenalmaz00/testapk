@@ -8,6 +8,7 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setupListener()
+        setImage()
     }
 
     private val galleryLauncher =
@@ -30,21 +31,22 @@ class MainActivity : AppCompatActivity() {
             binding.ivImage.setImageURI(uri)
         }
 
-    private fun setupListener() {
-        var attempt = 2
+
+    private  fun setImage() {
+        var isPermession = false
         binding.ivImage.setOnClickListener {
-            when {
-                checkSelfPermission(READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED -> {
-                    galleryLauncher.launch("image/*")
+            if (checkSelfPermission(READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
+                galleryLauncher.launch("image/*")
+            }
+            else {
+                requestPermissions(arrayOf(READ_EXTERNAL_STORAGE),100)
+                if (shouldShowRequestPermissionRationale(READ_EXTERNAL_STORAGE)){
+                    Toast.makeText(this,"Permession denied",Toast.LENGTH_SHORT).show()
+                    isPermession = true
                 }
-                else -> {
-                    if (attempt <= 0){
+                else{
+                    if (!(checkSelfPermission(READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) && isPermession){
                         Dialog()
-                    }
-                    else{
-                        requestPermissions(arrayOf(READ_EXTERNAL_STORAGE),100)
-                        Toast.makeText(this,"Premession denied",Toast.LENGTH_SHORT).show()
-                        attempt -= 1
                     }
                 }
             }
